@@ -15,7 +15,7 @@ export default ({ postId }) => {
 
     return <div>
         <form onSubmit={onSubmit}>
-            <div classNmae="form-group">
+            <div className="form-group">
                 <label>New Comment</label>
                 <input
                     value={content}

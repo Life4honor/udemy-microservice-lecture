@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+
 import CommentCreate from './CommentCreate'
 import CommentList from './CommentList'
+import axios from 'axios';
 
 export default () => {
     const [posts, setPosts] = useState({});

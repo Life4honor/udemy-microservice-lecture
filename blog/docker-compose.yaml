@@ -1,0 +1,38 @@
+version: '3'
+services:
+  client:
+    image: ${CLIENT_IMAGE}
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+
+  comments:
+    image: ${COMMENTS_IMAGE}
+    build:
+      context: ./comments
+      dockerfile: Dockerfile
+
+  event-bus:
+    image: ${EVENT_BUS_IMAGE}
+    build:
+      context: ./event-bus
+      dockerfile: Dockerfile
+
+  moderation:
+    image: ${MODERATION_IMAGE}
+    build:
+      context: ./moderation
+      dockerfile: Dockerfile
+
+  posts:
+    image: ${POSTS_IMAGE}
+    build:
+      context: ./posts
+      dockerfile: Dockerfile
+
+  query:
+    image: ${QUERY_IMAGE}
+    build:
+      context: ./query
+      dockerfile: Dockerfile
+

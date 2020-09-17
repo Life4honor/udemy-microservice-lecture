@@ -1,8 +1,7 @@
-version: '3'
+version: "3"
 services:
   auth:
     image: ${AUTH_IMAGE}
     build:
       context: ./auth
       dockerfile: Dockerfile
-      

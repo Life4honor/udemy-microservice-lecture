@@ -1,10 +1,10 @@
-import cors from 'cors';
-import { currentUserRouter } from './routes/current-user';
-import { errorHandler } from './middlewares/error-handlers'
-import express from 'express';
-import { signinRouter } from './routes/signin';
-import { signoutRouter } from './routes/signout';
-import { signupRouter } from './routes/signup';
+import cors from "cors";
+import { currentUserRouter } from "./routes/current-user";
+import { errorHandler } from "./middlewares/error-handlers";
+import express from "express";
+import { signinRouter } from "./routes/signin";
+import { signoutRouter } from "./routes/signout";
+import { signupRouter } from "./routes/signup";
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -16,5 +16,5 @@ app.use(signupRouter);
 app.use(errorHandler);
 
 app.listen(3000, () => {
-    console.log("Listening on 3000 port");
+  console.log("Listening on 3000 port");
 });

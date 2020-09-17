@@ -1,7 +1,7 @@
 import cors from "cors";
-import { currentUserRouter } from "./routes/current-user";
-import { errorHandler } from "./middlewares/error-handlers";
 import express from "express";
+import { errorHandler } from "./middlewares/error-handlers";
+import { currentUserRouter } from "./routes/current-user";
 import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
 import { signupRouter } from "./routes/signup";

@@ -1,0 +1,11 @@
+resources:
+  - auth-deployment.yaml
+  - auth-mongo.yaml
+  - ingress-gateway.yaml
+generatorOptions:
+  disableNameSuffixHash: true
+secretGenerator:
+  - name: jwt-secret
+    type: Opaque
+    envs:
+      - secrets/jwt-secret

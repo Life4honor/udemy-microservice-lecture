@@ -1,23 +1,23 @@
-import cors from "cors";
-import express from "express";
-import "express-async-errors";
-import mongoose from "mongoose";
+import cors from 'cors';
+import express from 'express';
+import 'express-async-errors';
+import mongoose from 'mongoose';
 import cookieSession from 'cookie-session';
-import { NotFoundError } from "./errors/not-found-error";
-import { errorHandler } from "./middlewares/error-handlers";
-import { currentUserRouter } from "./routes/current-user";
-import { signinRouter } from "./routes/signin";
-import { signoutRouter } from "./routes/signout";
-import { signupRouter } from "./routes/signup";
+import { NotFoundError } from './errors/not-found-error';
+import { errorHandler } from './middlewares/error-handlers';
+import { currentUserRouter } from './routes/current-user';
+import { signinRouter } from './routes/signin';
+import { signoutRouter } from './routes/signout';
+import { signupRouter } from './routes/signup';
 
 const app = express();
 app.set('trust proxy', true);
 app.use(cors());
 app.use(express.json());
 app.use(
-  cookieSession({ 
+  cookieSession({
     signed: false,
-	secure: true
+    secure: true,
   })
 );
 
@@ -26,7 +26,7 @@ app.use(signinRouter);
 app.use(signoutRouter);
 app.use(signupRouter);
 
-app.all("*", async (req, res) => {
+app.all('*', async (req, res) => {
   throw new NotFoundError();
 });
 
@@ -38,18 +38,18 @@ const start = async () => {
   }
 
   try {
-    await mongoose.connect("mongodb://auth-mongo-service:27017/auth", {
+    await mongoose.connect('mongodb://auth-mongo-service:27017/auth', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
     });
-    console.log("Connected to MongoDB");
+    console.log('Connected to MongoDB');
   } catch (err) {
     console.error(err);
   }
 
   app.listen(3000, () => {
-    console.log("Listening on 3000 port");
+    console.log('Listening on 3000 port');
   });
 };
 
